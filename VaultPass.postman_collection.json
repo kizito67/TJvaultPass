@@ -1,0 +1,1554 @@
+{
+  "info": {
+    "_postman_id": "73539f6d-a9fd-4264-817d-1f20cc76ffe4",
+    "name": "VaultPass",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54969767",
+    "_collection_link": "https://go.postman.co/collection/54969767-73539f6d-a9fd-4264-817d-1f20cc76ffe4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "SignUp",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"fullName\": \"paul john\",\r\n    \"password\": \"12346\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4001/api/users/signup",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4001",
+              "path": [
+                "api",
+                "users",
+                "signup"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"fullName\": \"paul john\",\r\n    \"email\": \"jpaul@yopmail.com\",\r\n    \"password\": \"12346\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4001/api/users/signup",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "users",
+                    "signup"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "149"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"95-+x6dvOCLQktdhwOeJJPZ9kF07uk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 24 May 2026 07:51:11 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"User registered successfully\",\n    \"user\": {\n        \"_id\": \"6a12adef6816cb520141cfff\",\n        \"fullName\": \"paul john\",\n        \"email\": \"jpaul@yopmail.com\",\n        \"role\": \"user\"\n    }\n}"
+            },
+            {
+              "name": "400 User already exist",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"fullName\": \"paul john\",\r\n    \"email\": \"jpaul@yopmail.com\",\r\n    \"password\": \"12346\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4001/api/users/signup",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "users",
+                    "signup"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "34"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"22-0vInFX57D0463enA/zkOEgxNZXU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 24 May 2026 07:51:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Email already exists\"\n}"
+            },
+            {
+              "name": "400 incomplete credentials",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"fullName\": \"paul john\",\r\n    \"password\": \"12346\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4001/api/users/signup",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "users",
+                    "signup"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "37"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"25-f/icTtMnVNJicVy/z/NFU3YsKDM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 24 May 2026 07:52:31 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"All fields are required\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "SignIn",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"kizito@yopmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4001/api/users/signin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4001",
+              "path": [
+                "api",
+                "users",
+                "signin"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "400 Empty Credentials",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"fullName\": \"paul john\",\r\n    \"password\": \"12346\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4001/api/users/signin",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "users",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "45"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2d-xu7+uV0l2vKD05IjA0aWEJyDeEc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 24 May 2026 08:20:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Email and password are required\"\n}"
+            },
+            {
+              "name": "201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"kizito@yopmail.com\",\r\n    \"password\": \"12346\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4001/api/users/signin",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "users",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "293"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"125-+vHBC0Mes/GB3X+uAo2YXm2+1yM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 24 May 2026 08:36:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user\": {\n        \"_id\": \"6a12adcc6816cb520141cffd\",\n        \"fullName\": \"kizito john\",\n        \"email\": \"kizito@yopmail.com\",\n        \"role\": \"user\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTJhZGNjNjgxNmNiNTIwMTQxY2ZmZCIsImlhdCI6MTc3OTYxMTc4NCwiZXhwIjoxNzc5NjE1Mzg0fQ.zAqy1Nyj9e5F7oyc90ITmKw0zHIsy1xnsK5Lutgio-w\"\n    }\n}"
+            },
+            {
+              "name": "400 Invalid Credentials",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"jp1@yopmail.com\",\r\n    \"password\": \"12346\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4001/api/users/signin",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "users",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "33"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"21-dBEoW0UmTF+EGUMaprEp9/8zNNA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 24 May 2026 08:21:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Invalid credentials\"\n}"
+            },
+            {
+              "name": "403 Account locked",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"kizito@yopmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4001/api/users/signin",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "users",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "49"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"31-bSSV9W7yjKHGVmYiyCrgB+b3Uq4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sun, 24 May 2026 08:38:53 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Account is locked. Try again later.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Admin Signin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"admin@vaultpass.com\",\r\n    \"password\": \"Admin123!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:4001/api/admin/signin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4001",
+              "path": [
+                "api",
+                "admin",
+                "signin"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Admin Signin",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"admin@vaultpass.com\",\r\n    \"password\": \"Admin123!\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4001/api/admin/signin",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "admin",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "294"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"126-aNHKyiqNm1KRz6xDq6rnXntj6KU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 25 May 2026 19:40:45 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user\": {\n        \"_id\": \"6a1493afea75cf2395e11411\",\n        \"fullName\": \"Root Admin\",\n        \"email\": \"admin@vaultpass.com\",\n        \"role\": \"admin\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTczODA0NSwiZXhwIjoxNzc5NzQxNjQ1fQ.FQHA3pqrwKVeVCSeOf_4Fkw40QbWrs6scF5s5ZEo1E4\"\n    }\n}"
+            },
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"admin@vaultpass.com\",\r\n    \"password\": \"Admin123!\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:4001/api/admin/signin",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "admin",
+                    "signin"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "294"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"126-aNHKyiqNm1KRz6xDq6rnXntj6KU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 25 May 2026 19:40:45 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user\": {\n        \"_id\": \"6a1493afea75cf2395e11411\",\n        \"fullName\": \"Root Admin\",\n        \"email\": \"admin@vaultpass.com\",\n        \"role\": \"admin\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTczODA0NSwiZXhwIjoxNzc5NzQxNjQ1fQ.FQHA3pqrwKVeVCSeOf_4Fkw40QbWrs6scF5s5ZEo1E4\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Public",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/public/message",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4001",
+              "path": [
+                "api",
+                "public",
+                "message"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:4001/api/public/message",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "public",
+                    "message"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "34"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"22-nXdE2ZJfRbmU50EXJ+2PoXW/iZA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 25 May 2026 20:18:01 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"This route is public\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/users/profile",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4001",
+              "path": [
+                "api",
+                "users",
+                "profile"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Unauthorized user",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:4001/api/users/profile",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "users",
+                    "profile"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "26"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1a-pljHtlo127JYJR4E/RYOPb6ucbw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 25 May 2026 20:26:31 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Unauthorized\"\n}"
+            },
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTJhZGVmNjgxNmNiNTIwMTQxY2ZmZiIsImlhdCI6MTc3OTc4NzQwOSwiZXhwIjoxNzc5NzkxMDA5fQ.scdR6XZE5OH8c2_Oabi5jkNAd627zGnXQo1yocomNds",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:4001/api/users/profile",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "users",
+                    "profile"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "204"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"cc-jL5pFh1rsuW67yEKqko3LpglpIs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 26 May 2026 09:23:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"user\": {\n        \"_id\": \"6a12adef6816cb520141cfff\",\n        \"fullName\": \"paul john\",\n        \"email\": \"jpaul@yopmail.com\",\n        \"role\": \"user\",\n        \"loginAttempts\": 0,\n        \"createdAt\": \"2026-05-24T07:51:11.232Z\",\n        \"updatedAt\": \"2026-05-24T07:51:11.232Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Moderator Report",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTJhZGNjNjgxNmNiNTIwMTQxY2ZmZCIsImlhdCI6MTc3OTc4NzMyNywiZXhwIjoxNzc5NzkwOTI3fQ.euyQ8GR_tWByee-_xs3YOgulpdiqjgmDaUsPG3EhyVE",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4001/api/moderator/reports",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4001",
+              "path": [
+                "api",
+                "moderator",
+                "reports"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Unauthorized",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:4001/api/moderator/reports",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "moderator",
+                    "reports"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "26"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1a-pljHtlo127JYJR4E/RYOPb6ucbw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 25 May 2026 20:35:18 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Unauthorized\"\n}"
+            },
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTJhZGNjNjgxNmNiNTIwMTQxY2ZmZCIsImlhdCI6MTc3OTc4NzMyNywiZXhwIjoxNzc5NzkwOTI3fQ.euyQ8GR_tWByee-_xs3YOgulpdiqjgmDaUsPG3EhyVE",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:4001/api/moderator/reports",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "moderator",
+                    "reports"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "31"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1f-rXIvJZgY5OV4WMWFUeDh5QPuoWw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 26 May 2026 09:22:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Moderator reports\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Promote user",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTc1MzE2NywiZXhwIjoxNzc5NzU2NzY3fQ.5PbCCqIJCPKxN4baMjgpPlT9ruUb8nh1Evmfkg4tSmQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4001/api/admin/users/6a12adcc6816cb520141cffd/promote",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4001",
+              "path": [
+                "api",
+                "admin",
+                "users",
+                "6a12adcc6816cb520141cffd",
+                "promote"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "401  Unauthorized",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:4001/api/admin/users/6a12adcc6816cb520141cffd/promote",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "6a12adcc6816cb520141cffd",
+                    "promote"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "26"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1a-pljHtlo127JYJR4E/RYOPb6ucbw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 25 May 2026 21:33:12 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Unauthorized\"\n}"
+            },
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTc4NTA4MSwiZXhwIjoxNzc5Nzg4NjgxfQ.h99gPpoPoGwSCLaHU7lp7UEiisnu4C0Zz7EIsTjW8BM",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:4001/api/admin/users/6a12adcc6816cb520141cffd/promote",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "6a12adcc6816cb520141cffd",
+                    "promote"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "40"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"28-Bc0VgIbp50aYMxkWMf560f876IM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 26 May 2026 08:45:17 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"User promoted successfully\"\n}"
+            },
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTc1MzE2NywiZXhwIjoxNzc5NzU2NzY3fQ.5PbCCqIJCPKxN4baMjgpPlT9ruUb8nh1Evmfkg4tSmQ",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:4001/api/admin/users/6a12adcc6816cb520141cffd/promote",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "6a12adcc6816cb520141cffd",
+                    "promote"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "50"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"32-lNJl2Jl0k+IsnfEAxFwBvb9wf+w\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 26 May 2026 08:55:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Session expired. Please login again.\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTc4NzUwNSwiZXhwIjoxNzc5NzkxMTA1fQ.qzM6-NJdcRoG_iONMGfbou7aQWJ5RWDrG-9xplBPMH0",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:4001/api/admin/users/6a1493afea75cf2395e11411",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "4001",
+              "path": [
+                "api",
+                "admin",
+                "users",
+                "6a1493afea75cf2395e11411"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "404 User Not Found",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTc4NTA4MSwiZXhwIjoxNzc5Nzg4NjgxfQ.h99gPpoPoGwSCLaHU7lp7UEiisnu4C0Zz7EIsTjW8BM",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:4001/api/admin/users/6a14a819a7e65b46e0a2e15c?a",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "6a14a819a7e65b46e0a2e15c"
+                  ],
+                  "query": [
+                    {
+                      "key": "a",
+                      "value": null
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "28"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1c-ZEVVcvtFhxKX/QUvVKqKxwGbbNA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 26 May 2026 08:47:38 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"User not found\"\n}"
+            },
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTc4NTA4MSwiZXhwIjoxNzc5Nzg4NjgxfQ.h99gPpoPoGwSCLaHU7lp7UEiisnu4C0Zz7EIsTjW8BM",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:4001/api/admin/users/6a14e0ac7b51b4f028161a45",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "6a14e0ac7b51b4f028161a45"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "39"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"27-27o4zzUjhHNmthTJyia4gBCjpos\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 26 May 2026 08:49:07 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"User deleted successfully\"\n}"
+            },
+            {
+              "name": "401 Unauthorized",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTc1MzE2NywiZXhwIjoxNzc5NzU2NzY3fQ.5PbCCqIJCPKxN4baMjgpPlT9ruUb8nh1Evmfkg4tSmQ",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:4001/api/admin/users/6a14e0ac7b51b4f028161a45",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "6a14e0ac7b51b4f028161a45"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "50"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"32-lNJl2Jl0k+IsnfEAxFwBvb9wf+w\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 26 May 2026 08:58:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Session expired. Please login again.\"\n}"
+            },
+            {
+              "name": "400 Bad Request",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMTQ5M2FmZWE3NWNmMjM5NWUxMTQxMSIsImlhdCI6MTc3OTc4NzUwNSwiZXhwIjoxNzc5NzkxMTA1fQ.qzM6-NJdcRoG_iONMGfbou7aQWJ5RWDrG-9xplBPMH0",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:4001/api/admin/users/6a1493afea75cf2395e11411",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "4001",
+                  "path": [
+                    "api",
+                    "admin",
+                    "users",
+                    "6a1493afea75cf2395e11411"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "45"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2d-SHsE5FLIpv62EgUf4JVcWpsQg8c\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Tue, 26 May 2026 09:26:34 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"message\": \"Admins cannot delete themselves\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Entry Point",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
