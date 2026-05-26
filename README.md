@@ -229,33 +229,7 @@ Rules:
 
 ---
 
-# Database Design
-
-## Users Collection
-
-Purpose:
-Stores user authentication and authorization data.
-
-Fields:
-- fullName
-- email
-- password
-- role
-- loginAttempts
-- lockUntil
-
----
-
-## ActivityLogs Collection
-
-Purpose:
-Stores suspicious activities and security logs.
-
-Fields:
-- action
-- user
-- ipAddress
-- timestamp
+# Database Collections
 
 ## Users Collection
 
