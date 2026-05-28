@@ -2,6 +2,7 @@ const { User, ActivityLog } = require('../models/user.models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const generateToken = require('../utils/generatetoken');
+const { sendEmail } = require('../utils/email');
 
 
 const signUp = async (req, res) => {
@@ -23,12 +24,13 @@ const signUp = async (req, res) => {
             fullName: newUser.fullName,
             email: newUser.email,
             role: newUser.role,
-            otp: newUser.otp,
         };
+        await sendEmail(newUser.email, 'Verify Your Email', `Your OTP is: ${otp} it is valid for 10 minutes.`);
+
         await ActivityLog.create({ action: 'User Registered', user: newUser._id });
         res.status(201).json({ message: 'User registered successfully', user: userResponse });
     } catch (error) {
-        res.status(500).json({ message: 'Server error', error: error.message });
+        res.status(500).json({ message: 'Server error' });
     }
 };
 
@@ -88,7 +90,7 @@ const signIn = async (req, res) => {
 
 
     } catch (error) {
-        return res.status(500).json({ message: 'Server error', error: error.message });
+        return res.status(500).json({ message: 'Server error'});
     }
 };
 
@@ -136,7 +138,7 @@ const verifyEmail = async (req, res) => {
         await user.save();
         return res.json({ message: 'Email verified successfully' });
     } catch (error) {
-        return res.status(500).json({ message: 'Server error', error: error.message });
+        return res.status(500).json({ message: 'Server error' });
     }
 };
 
@@ -148,7 +150,7 @@ const resendOtp = async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
-        // Regenerate OTP and expiry time
+
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
         const otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
         user.otp = otp;
@@ -156,7 +158,7 @@ const resendOtp = async (req, res) => {
         await user.save();
         return res.json({ message: 'OTP resent successfully', otp });
     } catch (error) {
-        return res.status(500).json({ message: 'Server error', error: error.message });
+        return res.status(500).json({ message: 'Server error'});
     }
 };
 
